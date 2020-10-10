@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="card">
+      <h5 class="card-header">BREAD (Browser, Read, Edit, Add, Delete) </h3>
+        <div class="card-body">
+
+          <!-- Form Search -->
+          <div class="container">
+            <form action="" method="GET" id="searchForm">
+              <input type="hidden" id="page" name="page" value="1">
+              <div class="container mt-4">
+                <h5 style="text-align: left">Filters : </h3>
+                  <br>
+
+                  <!--Row String-->
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <input class="form-check-input" name="checkString" type="checkbox" id="string">
+                        <label class="form-check-label" name="checkString" for="checkString">
+                          String
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-10">
+                      <div class="form-group">
+                        <input type="text" name="string" class="form-control" id="string" placeholder="String">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Row Integer-->
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="checkInteger" id="checkInteger">
+                        <label class="form-check-label" for="integer">
+                          Integer
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-10">
+                      <div class="form-group">
+                        <input type="number" class="form-control" id="number" name="integer" placeholder="Integer">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Row Float-->
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="checkFloat" id="checkFloat">
+                        <label class="form-check-label" for="checkFloat">
+                          Float
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-10">
+                      <div class="form-group">
+                        <input type="number" class="form-control" step="0.01" id="float" name="float"
+                          placeholder="Float">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Row Date-->
+                  <div class="row">
+                    <div class="col-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="checkDate" id="checkDate">
+                        <label class="form-check-label" for="date">
+                          Date
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="form-group">
+                        <input type="date" class="form-control" name="startDate" id="date" placeholder="masukan date">
+                      </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <p class="col offset-2">to</p>
+                    <div class="w-100"></div>
+                    <div class="col-3 offset-2">
+                      <div class="form-group">
+                        <input type="date" class="form-control" name="endDate" id="date" placeholder="masukan date">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Row Boolean-->
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="checkBool" id="boolean">
+                        <label class="form-check-label" for="boolean">
+                          Boolean
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-10">
+                      <div class="form-group">
+                        <select name="bool" id="boolean" class="form-control">
+                          <option selected disabled> Choose the boolean</option>
+                          <option name="bool" class="form-control" value="true">True</option>
+                          <option name="bool" class="form-control" value="false">False</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Button Submit-->
+                  <button type="submit" class="btn btn-primary">Search</button>
+
+                  <a href="/">
+
+                    <!--Button Reset-->
+                    <button type="button" class="btn btn-primary">Reset</button>
+                  </a>
+              </div>
+            </form>
+          </div>

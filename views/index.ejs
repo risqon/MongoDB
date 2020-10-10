@@ -1,0 +1,55 @@
+<%- include('./partials/header')%>
+<%- include('./search')%>
+
+<div class="container mt-4">
+  <table class="table table-striped mt-4">
+    <thead>
+      <tr>
+        <th scope="col">String</th>
+        <th scope="col">integer</th>
+        <th scope="col">Float</th>
+        <th scope="col">Date</th>
+        <th scope="col">Boolean</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% result.forEach((item, index) => { %>
+      <tr>
+        <td><%= item.string %></td>
+        <td><%= item.integer %></td>
+        <td><%= item.float %></td>
+        <td><%= moment(item.date).format("DD-MMMM-YYYY") %></td>
+        <td><%= item.boolean %></td>
+        <td>
+          <a class="btn btn-success edit" href="edit/<%= item._id %>">Edit</a>
+          <a class="btn btn-danger delete" onclick="return confirm('Yakin mau di hapus?');"
+            href="delete/<%= item._id %>">Delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <div>
+    <div class="container">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item <%= page == 1 ? 'disabled' : '' %>"><a class="page-link"
+              href="<%= url.replace(`page=${page}`, `page=${parseInt(page)-1}`)%>">Previous</a></li>
+          <%for (let i=1; i <= pages; i++ ){%>
+          <li class="page-item <%= (i == page) ? 'active' : '' %> "> <a class="page-link"
+              href="<%= url.replace(`page=${page}`, `page=${i}`)%>"><%= i%></a></li>
+          <%}%>
+            <li class="page-item <%= page==pages ? 'disabled' : '' %>"> <a class="page-link disabled"
+            href="<%= url.replace(`page=${page}`, `page=${parseInt(page)+1}`)%>">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--Button Add-->
+  <div class="container">
+    <a href="/add">
+      <button type="button" class="btn btn-primary">Add New</button>
+    </a>
+  </div>
+  <%- include('./partials/footer')%>
